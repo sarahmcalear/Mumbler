@@ -1,0 +1,22 @@
+<h1>All pretty Mumbles</h1>
+
+
+<% @mumbles.each_with_index do |entry, id| %>
+<div>
+  <div class="top">
+    <%= entry["author_handle"] %>
+  </div>
+
+    <a href="/mumble/<%= @mumbles.count - id %>"><img src="<%= entry["image"] %>"></a>
+
+  <div class="bottom">
+    <%= entry["text"] %>
+    <%= entry["tags"] %>
+    <%= entry["date"] %>
+    <p><%= entry["likes"] %> Likes</p>
+  </div>
+
+  <% end %>
+
+
+</div>

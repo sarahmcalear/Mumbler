@@ -1,0 +1,36 @@
+<h1>Create a new Mumble</h1>
+
+<ul>
+  <form method="post" action="/mumbles">
+
+    <li><label>Text:
+      <input type="text" name="text" required>
+    </label></li>
+
+    <li><label>Image:
+      <input type="url" name="image" value="http://images5.fanpop.com/image/photos/28600000/puppy-wallpaper-dancing-little-animals-28654684-1280-1024.jpg">
+    </label></li>
+
+    <li><label>Date:
+      <input type="date" name="date" value="1000-01-01">
+    </label></li>
+
+    <li><label>Tags:
+      <input type="text" name="tags" value="sad puppy">
+    </label></li>
+
+    <li><label>Author Email:
+      <input type="text" name="author_email" required>
+    </label></li>
+
+    <li><label>Author Handle:
+      <input type="text" name="author_handle"  value="anonymous">
+    </label></li>
+
+    <li><label>Author Thumbnail:
+      <input type="url" name="author_thumbnail" value="http://writeortakeanap.files.wordpress.com/2012/10/puppy.jpg">
+    </label></li>
+
+    <li><input type="submit" name="Add Mumble"></li>
+  </form>
+</ul>

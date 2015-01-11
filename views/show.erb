@@ -1,0 +1,21 @@
+<h1>Pretty Mumble</h1>
+
+<div>
+  <div class="top">
+    <%= @mumble["author_handle"] %>
+  </div>
+
+    <img src="<%= @mumble["image"] %>">
+  <ul>
+    <div class="bottom">
+      <li><%= @mumble["text"] %></li>
+      <li><%= @mumble["tags"] %></li>
+      <li><%= @mumble["date"] %></li>
+      <li><%= @mumble["author_thumbnail"] %></li>
+      <li><p><%= @mumble["likes"] %> Likes</p></li>
+    </div>
+  </ul>
+
+
+
+</div>
