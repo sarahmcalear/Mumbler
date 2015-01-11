@@ -1,7 +1,12 @@
 <h1>Pretty Mumble</h1>
 
+<% email_address = @mumble["author_email"].downcase %>
+<% hash = Digest::MD5.hexdigest(email_address) %>
+
 <div>
   <div class="top">
+    <img src="http://www.gravatar.com/avatar/<%=hash%>" alt="<%= @mumble["author_thumbnail"] %>">
+
     <%= @mumble["author_handle"] %>
   </div>
 
@@ -12,7 +17,8 @@
       <li><%= @mumble["tags"] %></li>
       <li><%= @mumble["date"] %></li>
       <li><%= @mumble["author_thumbnail"] %></li>
-      <li><p><%= @mumble["likes"] %> Likes</p></li>
+      <li><p><%= likes_for(@id) %> &hearts; likes</p></li>
+      <li><a href="/mumble/<%= @id %>?like=true"><button>&hearts; like</button></a></li>
     </div>
   </ul>
 

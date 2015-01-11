@@ -1,5 +1,8 @@
+require_relative 'database_helper'
+
 module Mumbler
   class Server < Sinatra::Base
+    helpers Mumbler::DatabaseHelper
 
     configure :development do
       register Sinatra::Reloader
@@ -25,19 +28,23 @@ module Mumbler
     end
 
     get('/mumble/:id') do
-      id = params[:id].to_i
-      @mumble = $redis.hgetall("mumble:#{id}")
-      render(:erb, :show, {:layout => :default})
+      @id = params[:id].to_i
+      @mumble = $redis.hgetall("mumble:#{@id}")
+      if params[:like] == 'true'
+        like!(@id)
+        redirect("/mumble/#{@id}")
+      else
+       render(:erb, :show, {:layout => :default})
+     end
     end
 
     post('/mumbles') do
-
       id = $redis.incr("mumble_id")
       $redis.hmset(
         "mumble:#{id}",
         "text", params["text"],
         "image", params["image"],
-        "date", params["date"],
+        "date", Date.parse(params["date"]).strftime("%b %d, %Y"),
         "tags", params["tags"],
         "author_email", params["author_email"],
         "author_handle", params["author_handle"],
