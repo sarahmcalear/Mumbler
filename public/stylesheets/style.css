@@ -1,0 +1,103 @@
+body {
+  width: 85%;
+  margin: 0 auto;
+  background: midnightblue;
+}
+
+.headbar {
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  top: 0;
+  width: 85%;
+  margin: 0 auto;
+  background-color: lightgrey;
+}
+
+.headbar h1 {
+  display: inline-block;
+  width: 30%;
+  font-size: 38px;
+  margin: 0 10px;
+}
+
+.headbar ul {
+  display: inline-block;
+  width: 50%;
+}
+
+.headbar ul li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 5%;
+  font-size: 21px;
+}
+
+a {
+ text-decoration: none;
+}
+
+.mumbles-list {
+  margin-top: 60px;
+}
+
+.mumbles-list h1 {
+  height: 30px;
+  color: lightgrey;
+}
+
+.top {
+  padding-left: 8%;
+  font-size: 2em;
+padding-top: 10px;
+}
+
+.top img {
+  border-radius: 50%;
+  width: 50px;
+}
+
+.main img {
+  width: 85%;
+  display: block;
+  margin: 0 auto;
+}
+
+.mumble {
+  background: lightgrey;
+  margin-bottom: 15px;
+}
+
+.single-mumble {
+  margin-top: 60px;
+}
+
+.single-mumble h1 {
+  color: lightgrey;
+}
+
+.mumble ul {
+  padding: 0;
+}
+
+.bottom {
+  padding-left: 8%;
+}
+
+.bottom li {
+  list-style: none;
+  display: inline-block;
+}
+
+.bottom li:nth-child(1) {
+  margin-right: 30%;
+}
+
+#text {
+  display: block;
+}
+
+img {
+  border-radius: 5px;
+}

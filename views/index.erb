@@ -1,22 +1,27 @@
-<h1>All pretty Mumbles</h1>
+<div class="mumbles-list">
+  <h1>All pretty Mumbles</h1>
 
 
-<% @mumbles.each_with_index do |entry, id| %>
-<div>
-  <div class="top">
-    <%= entry["author_handle"] %>
+  <% @mumbles.each_with_index do |entry, id| %>
+  <div class="mumble">
+    <div class="top">
+      <%= entry["author_handle"] %>
+    </div>
+
+    <div class="main">
+      <a href="/mumble/<%= @mumbles.count - id %>"><img src="<%= entry["image"] %>"></a>
+    </div>
+    <ul>
+      <div class="bottom">
+        <li>#<%= entry["tags"] %></li>
+        <li><%= entry["date"] %></li>
+        <li id="text"><%= entry["text"] %></li>
+        <li><p><%= entry["likes"] %> Likes</p></li>
+      </div>
+    </ul>
   </div>
 
-    <a href="/mumble/<%= @mumbles.count - id %>"><img src="<%= entry["image"] %>"></a>
-
-  <div class="bottom">
-    <%= entry["text"] %>
-    <%= entry["tags"] %>
-    <%= entry["date"] %>
-    <p><%= entry["likes"] %> Likes</p>
-  </div>
-
-  <% end %>
+    <% end %>
 
 
 </div>
