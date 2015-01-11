@@ -101,3 +101,15 @@ padding-top: 10px;
 img {
   border-radius: 5px;
 }
+
+.new-file {
+  text-align: center;
+}
+
+form li {
+  list-style: none;
+}
+
+form label p {
+  color: lightgrey;
+}
